@@ -22,7 +22,7 @@
 
     <!-- Add your site or application content here -->
       <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+        <div class="container-app">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -32,7 +32,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Receitas</a>
+            <a class="navbar-brand" href="#/">Receitas de solteiro</a>
               
           </div>
 
@@ -58,14 +58,32 @@
         </div>
       </div>
 
+    
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+    
+    <div class="container-app" ng-controller="MainCtrl">
+        <div class="container-fluid">
+            <div class="row">
+                <div ng-include="carouselURL"></div>
+            </div>
+            <div class="row">
+                <div ng-include="menuURL"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div ng-view=""></div>
+                </div>
+                <div class="col-md-4">
+                    <div ng-include="rightViewURL"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+
 
     <footer class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        <p><span class="glyphicon glyphicon-heart"></span> from Diego & Willian</p>
       </div>
     </footer>
 
@@ -99,6 +117,8 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/category.js"></script>
+        <script src="scripts/controllers/home.js"></script>
         <!-- endbuild -->
 </body>
 </html>
