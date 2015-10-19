@@ -34,6 +34,12 @@ angular
         controller: 'CategoryCtrl',
         controllerAs: 'category'
       })
+      .when('/detail/:id', {
+        state: 'detail',
+        templateUrl: 'views/detail.html',
+        controller: 'DetailCtrl',
+        controllerAs: 'detail'
+      })
       .otherwise({
         redirectTo: '/'
       });

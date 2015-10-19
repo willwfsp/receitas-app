@@ -1,0 +1,89 @@
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Salgados</a></li>
+  <li class="active">{{dataSet.name}}</li>
+</ol>
+
+<h1>{{dataSet.name}}</h1>
+
+<h2>Ingredientes</h2>
+<div class="row">
+    <div class="col-md-8">
+        <div ng-repeat="item in dataSet.ingredients">
+            <h3>{{item.part}}</h3>
+            <ul class="simple-list">
+                <li ng-repeat="ingredient in item.items">{{ingredient}}</li>
+            </ul>
+
+        </div>
+        <h2>Modo de preparo</h2>
+        <div ng-repeat="item in dataSet.preparation">
+            <h3>{{item.part}}</h3>
+            <ul class="simple-list">
+                <li ng-repeat="steps in item.items"><span class="step-index">{{$index+1}} - </span>{{steps}}</li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-warning panel-preview related">
+            <div class="panel-heading">
+                <h3 class="panel-title">Informações</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <span class="info-label">Avaliação:</span>
+                    <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(dataSet.rating) track by $index"></span>
+                    <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-dataSet.rating) track by $index"></span>
+                </p>
+                <p><span class="info-label">Rende:</span> {{dataSet.portion}} porções</p>
+                <p><span class="info-label">Autor:</span> {{dataSet.author}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Comentários</h2>
+    </div><!-- /col-sm-12 -->
+</div><!-- /row -->
+<br>
+<div class="row">
+    <div class="col-sm-1">
+        <div class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
+
+    <div class="col-md-7">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+    </div><!-- /col-sm-5 -->
+</div>
+<div class="row">
+    <div class="col-sm-1">
+        <div class="thumbnail">
+            <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+        </div><!-- /thumbnail -->
+    </div><!-- /col-sm-1 -->
+
+    <div class="col-md-7">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <strong>myusername</strong> <span class="text-muted">commented 5 days ago</span>
+            </div>
+            <div class="panel-body">
+                Panel content
+            </div><!-- /panel-body -->
+        </div><!-- /panel panel-default -->
+    </div><!-- /col-sm-5 -->
+</div><!-- /row -->
+
+

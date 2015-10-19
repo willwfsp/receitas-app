@@ -5,192 +5,24 @@
 </div>
 
 
-
-<div class="row">
-    <h2>Salgados</h2>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
+<div ng-repeat="item in dataSet">
+    <div class="row">
+        <h2>{{item.category}}</h2>
+    </div>
+    <div class="row">
+        <div class="col-xs-8 col-sm-4 col-md-6 col-lg-4" ng-repeat="recipe in item.recipes" ng-click="getDetails(recipe.id)">
+            <div class="panel panel-warning panel-preview related">
+              <div class="panel-body">
+                <div class="image">
+                    <img src="http://placehold.it/220x220">
+                </div>
+                <h2 class="panel-title">{{recipe.name}}</h2>
+                <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(recipe.rating) track by $index"></span>
+                <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-recipe.rating) track by $index"></span>
+              </div>
             </div>
-            <h2 class="panel-title">Escondidinho de carne</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Frango a passarinho</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Macarrão com salsicha</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>  
-    </div>
-</div>
-<div class="row">
-    <h2>Doces</h2>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Escondidinho de carne</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Frango a passarinho</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Macarrão com salsicha</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>  
     </div>
 </div>
 
-<div class="row">
-    <h2>Bebidas</h2>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Escondidinho de carne</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Frango a passarinho</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Macarrão com salsicha</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>  
-    </div>
-</div>
-<div class="row">
-    <h1>Videos</h1>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Escondidinho de carne</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="panel panel-default related">
-          <div class="panel-body">
-            <div class="image">
-
-            </div>
-            <h2 class="panel-title">Frango a passarinho</h2>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-            <span class="glyphicon glyphicon-star-empty"></span>
-          </div>
-        </div>
-    </div>
-
-</div>
 

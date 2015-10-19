@@ -2,8 +2,17 @@ h1 {
     color: coral;
 }
 
+a {
+    color: #C25C5C;
+}
+
 h2 {
     color: #C25C5C;
+}
+
+h3 {
+    color: dimgray;
+    font-size: 18px;
 }
 
 div.search-bar {
@@ -128,11 +137,50 @@ body {
 }
 
 .related .image {
-    height: 180px;
-    background-color: lightcoral;
+    height: 220px;
+    background-color: lightpink;
+}
+
+div.related {
+    min-width: 220px;
 }
 
 .panel-title {
     padding-top: 10px;
     padding-bottom: 5px;
+}
+
+.panel-preview {
+    width: 250px;
+}
+
+/* Detalhes */
+ul.simple-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.simple-list li:nth-child(odd) {
+    background-color: #faf8f3;
+}
+
+ul.simple-list li {
+    padding: 10px;
+}
+
+span.step-index, span.info-label {
+    color: coral;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #faf8f3;
+
+}
+
+.panel.panel-warning {
+    border-color: #faf8f3;
+    border-width: 1.5px;
 }
