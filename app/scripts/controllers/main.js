@@ -16,6 +16,6 @@ angular.module('receitasApp')
     $scope.carouselURL = "views/carousel.html";
     $scope.menuURL = "views/menu.html";
     $scope.contentURL = "views/content.html";
-    $scope.rightViewURL = "views/right-container.html";
+    $scope.rightViewURL = "views/related.html";
 
   });

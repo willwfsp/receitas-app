@@ -6,11 +6,11 @@
 
 
 <div ng-repeat="item in dataSet">
-    <div class="row">
+    <div class="row pointer" ng-click="getCategory(item.category)">
         <h2>{{item.category}}</h2>
     </div>
     <div class="row">
-        <div class="col-xs-8 col-sm-4 col-md-6 col-lg-4" ng-repeat="recipe in item.recipes" ng-click="getDetails(recipe.id)">
+        <div class="col-xs-8 col-sm-6 col-md-4 pointer" ng-repeat="recipe in item.recipes" ng-click="getDetails(recipe.id)">
             <div class="panel panel-warning panel-preview related">
               <div class="panel-body">
                 <div class="image">
@@ -24,5 +24,4 @@
         </div>
     </div>
 </div>
-
 

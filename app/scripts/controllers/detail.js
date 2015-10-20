@@ -12,6 +12,13 @@ angular.module('receitasApp')
     
     // método retorna um array de 'num' posições para que o ng-repeat itere para exibição das estrelas
     $scope.utils = Utils;
+    $scope.commentsURL = "views/comments.html";
+    
+    // encaminha para a tela de categorias
+    $scope.getCategory = function ( id ) {
+        id = id.toLowerCase();
+        $location.path( '/category/' + id );
+    };
     
     // dataset provisório e desejavel para renderização dos detalhes de uma receita
     $scope.dataSet = {

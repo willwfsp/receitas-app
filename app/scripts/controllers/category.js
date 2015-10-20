@@ -8,11 +8,17 @@
  * Controller of the receitasApp
  */
 angular.module('receitasApp')
-.controller('CategoryCtrl', function ($routeParams, $scope ) {
+.controller('CategoryCtrl', function ($routeParams, $scope, $location, Utils ) {
     var category = $routeParams.id;
     
+    $scope.utils = Utils;
 
     $scope.categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
+    
+    // encaminha para o detalhe de uma receita de acordo com o id
+    $scope.getDetails = function ( id ) {
+        $location.path( '/detail/' + id );
+    };
     
     // método retorna um array de 'num' posições para que o ng-repeat itere para exibição das estrelas
     $scope.getStars = function(num) {

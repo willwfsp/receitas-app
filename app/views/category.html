@@ -1,18 +1,22 @@
+<ol class="breadcrumb">
+  <li class="pointer"><a href="#/">Home</a></li>
+  <li class="active">{{categoryTitle}}</li>
+</ol>
 
 <div class="row">
     <h1>{{categoryTitle}}</h1>
 </div>
 <div class="row">
-     <div class="col-xs-8 col-sm-4 col-md-6 col-lg-4" ng-repeat="recipe in dataSet" ng-click="getDetails(recipe.id)">
-            <div class="panel panel-default panel-preview related">
-              <div class="panel-body">
-                <div class="image">
-                    <img src="http://placehold.it/220x220">
-                </div>
-                <h2 class="panel-title">{{recipe.name}}</h2>
-                <span class="glyphicon glyphicon-star" ng-repeat="star in getStars(recipe.rating) track by $index"></span>
-                <span class="glyphicon glyphicon-star-empty" ng-repeat="star in getEmptyStars(recipe.rating) track by $index"></span>
-              </div>
+    <div class="col-xs-8 col-sm-6 col-md-4 pointer" ng-repeat="recipe in dataSet" ng-click="getDetails(recipe.id)">
+        <div class="panel panel-default panel-preview related">
+          <div class="panel-body">
+            <div class="image">
+                <img src="http://placehold.it/220x220">
             </div>
+            <h2 class="panel-title">{{recipe.name}}</h2>
+            <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(recipe.rating) track by $index"></span>
+            <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-recipe.rating) track by $index"></span>
+          </div>
         </div>
+    </div>
 </div>

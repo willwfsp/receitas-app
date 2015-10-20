@@ -40,6 +40,16 @@ angular
         controller: 'DetailCtrl',
         controllerAs: 'detail'
       })
+      .when('/related', {
+        templateUrl: 'views/related.html',
+        controller: 'RelatedCtrl',
+        controllerAs: 'related'
+      })
+      .when('/comments', {
+        templateUrl: 'views/comments.html',
+        controller: 'CommentsCtrl',
+        controllerAs: 'comments'
+      })
       .otherwise({
         redirectTo: '/'
       });

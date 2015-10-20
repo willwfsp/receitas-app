@@ -12,8 +12,13 @@ angular.module('receitasApp')
     
     // encaminha para o detalhe de uma receita de acordo com o id
     $scope.getDetails = function ( id ) {
-      console.log('clicou');
-      $location.path( '/detail/' + id );
+        $location.path( '/detail/' + id );
+    };
+    
+    // encaminha para a tela de categorias
+    $scope.getCategory = function ( id ) {
+        id = id.toLowerCase();
+        $location.path( '/category/' + id );
     };
     
     $scope.utils = Utils;

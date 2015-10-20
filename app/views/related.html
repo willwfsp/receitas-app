@@ -1,0 +1,17 @@
+
+<h1>Relacionados</h1>
+<div class="row">
+   <div class="col-md-8 pointer" ng-repeat="recipe in dataSet" ng-click="getDetails(recipe.id)">
+        <div class="panel panel-default panel-preview related">
+          <div class="panel-body">
+            <div class="image">
+                <img src="http://placehold.it/220x220">
+            </div>
+            <h2 class="panel-title">{{recipe.name}}</h2>
+            <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(dataSet.rating) track by $index"></span>
+            <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-dataSet.rating) track by $index"></span>
+          </div>
+        </div>
+    </div>
+</div>
+
