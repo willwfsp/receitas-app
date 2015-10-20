@@ -181,6 +181,10 @@ span.step-index, span.info-label {
 }
 
 .panel.panel-warning {
-    border-color: #faf8f3;
+    border-color: #EEEEEE;
     border-width: 1.5px;
+}
+
+.pointer {
+    cursor: pointer;
 }

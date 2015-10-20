@@ -17,7 +17,7 @@ angular.module('receitasApp')
     $scope.dataSet = {
         id: 0,
         name: "Escondidinho de frango",
-        mainImg: "",
+        imgs: ["img1","img2","img3","img4","img5"],
         time: "30min",
         rating: 4,
         portion: 5,
