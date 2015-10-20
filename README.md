@@ -1,12 +1,33 @@
 # Receitas de Solteiro
 
 ## Pré-instalação
-Tenha instalado no seu computador o Nodejs
+Tenha instalado no seu computador o [Nodejs](https://nodejs.org/en/)
 
-## Build & development
+## Instalação
+1. Através do `nodejs` instale o `grunt` e o `bower`
 
-Run `grunt` for building and `grunt serve` for preview.
+```
+#!script
+
+npm install -g grunt grunt-cli bower
+```
+
+2. Navege para a pasta raiz do projeto e instale as dependências
+```
+#!script
+
+npm install
+```
+```
+#!script
+
+bower install
+``
+
+## Build & Desenvolvimento
+
+Execute `grunt` para building e `grunt serve` para o preview do app.
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma.
+Executando `grunt test` irá realizar os testes unitários usando o "karma".
