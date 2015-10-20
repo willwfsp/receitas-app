@@ -1,7 +1,7 @@
-# receitas
+# Receitas de Solteiro
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+## Pré-instalação
+Tenha instalado no seu computador o Nodejs
 
 ## Build & development
 
