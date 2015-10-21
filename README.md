@@ -4,14 +4,14 @@
 Tenha instalado no seu computador o [Nodejs](https://nodejs.org/en/)
 
 ## Instalação
-1. Através do `nodejs` instale o `grunt` e o `bower`
+1.Através do `nodejs` instale o `grunt` e o `bower`
 
 ```
 
 npm install -g grunt grunt-cli bower
 ```
 
-2. Navege para a pasta raiz do projeto e instale as dependências
+2.Navege para a pasta raiz do projeto e instale as dependências
 ```
 #na pasta receitas-app
 
