@@ -10,11 +10,11 @@
         <h2>{{item.category}}</h2>
     </div>
     <div class="row">
-        <div class="col-xs-8 col-sm-6 col-md-4 pointer" ng-repeat="recipe in item.recipes" ng-click="getDetails(recipe.id)">
+        <div class="col-xs-12 col-sm-6 col-md-4 pointer" ng-repeat="recipe in item.recipes" ng-click="getDetails(recipe.id)">
             <div class="panel panel-warning panel-preview related">
               <div class="panel-body">
                 <div class="image">
-                    <img src="http://placehold.it/220x220">
+                    <img src="imagens/chocolate_quente.jpg">
                 </div>
                 <h2 class="panel-title">{{recipe.name}}</h2>
                 <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(recipe.rating) track by $index"></span>
