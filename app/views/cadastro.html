@@ -1,1 +1,97 @@
-<p>This is the cadastro view.</p>
+<script>
+  function mascara(o, f) {
+    v_obj = o;
+    v_fun = f;
+    setTimeout("execmascara()", 1);
+  }
+
+  function execmascara() {
+    v_obj.value = v_fun(v_obj.value);
+  }
+    function checaTelefone(v) {
+    if( v.length < 15 ) {
+      v = v.replace(/\D/g, ""); //Remove tudo o que n?o ? d?gito
+      v = v.replace(/^(\d\d)(\d)/g, "($1) $2"); //Coloca par?nteses em volta dos dois primeiros d?gitos
+      v = v.replace(/(\d{4})(\d)/, "$1-$2"); //Coloca h?fen entre o quarto e o quinto d?gitos
+    }
+    else {
+      v = v.replace(/\D/g, ""); //Remove tudo o que n?o ? d?gito
+      v = v.replace(/^(\d\d)(\d)/g, "($1) $2"); //Coloca par?nteses em volta dos dois primeiros d?gitos
+      v = v.replace(/(\d{5})(\d)/, "$1-$2"); //Coloca h?fen entre o quarto e o quinto d?gitos
+    }
+    return v;
+  }
+</script>
+<h1>Cadastro</h1>
+<form class="form-horizontal" role="form" action="" name="formulario" onsubmit="return validateForm()">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="nome" onblur="ChangeCase(this);" ng-model="nome" ng-change="nome=change(nome)" required class="form-control"  id="nome" placeholder="Nome Completo">
+    </div>
+  </div>
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="date" required class="form-control"  ng-model="date" id="date" placeholder="Data de Nascimento">
+    </div>
+  </div>
+  <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-4">
+      <input type="cidade" required class="form-control" ng-model="estado" ng-model="cidade" id="cidade" ng-model="cidade" ng-change="cidade=change(cidade)" placeholder="Cidade">
+    </div>
+    <div  ng-model="estado" class="col-sm-2">
+      <select class="form-control" name="uf" id="uf">
+      <option value="">Selecione</option>
+      <option value="AC">AC</option>
+      <option value="AL">AL</option>
+      <option value="AM">AM</option>
+      <option value="AP">AP</option>
+      <option value="BA">BA</option>
+      <option value="CE">CE</option>
+      <option value="DF">DF</option>
+      <option value="ES">ES</option>
+      <option value="GO">GO</option>
+      <option value="MA">MA</option>
+      <option value="MG">MG</option>
+      <option value="MS">MS</option>
+      <option value="MT">MT</option>
+      <option value="PA">PA</option>
+      <option value="PB">PB</option>
+      <option value="PE">PE</option>
+      <option value="PI">PI</option>
+      <option value="PR">PR</option>
+      <option value="RJ">RJ</option>
+      <option value="RN">RN</option>
+      <option value="RS">RS</option>
+      <option value="RO">RO</option>
+      <option value="RR">RR</option>
+      <option value="SC">SC</option>
+      <option value="SE">SE</option>
+      <option value="SP">SP</option>
+      <option value="TO">TO</option>
+ </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input required class="form-control" minlength="16"  maxlength="17" onkeypress="mascara(this,checaTelefone)" type="text" placeholder="Telefone" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="email" required class="form-control" ng-model="email" id="email" placeholder="E-Mail">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-3"> 
+      <input type="password" minlength="8" class="form-control" ng-model="senha" id="senha" name="senha" placeholder="Senha">
+    </div>
+    <div class="col-sm-3"> 
+      <input type="password" minlength="8" class="form-control" ng-model="senha2" id="senha2" name="senha2" placeholder="Repita a senha">
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>

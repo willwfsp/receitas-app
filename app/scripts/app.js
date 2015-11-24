@@ -60,6 +60,11 @@ angular
         controller: 'CadastroCtrl',
         controllerAs: 'cadastro'
       })
+      .when('/cadastro_receita', {
+        templateUrl: 'views/cadastro_receita.html',
+        controller: 'CadastroReceitaCtrl',
+        controllerAs: 'cadastro_receita'
+      })
       .otherwise({
         redirectTo: '/'
       });
