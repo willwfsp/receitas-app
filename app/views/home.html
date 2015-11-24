@@ -1,4 +1,4 @@
-
+<!--
 
 <div class="row">
     <h1>Destaques</h1>
@@ -24,4 +24,27 @@
         </div>
     </div>
 </div>
+-->
+<div class="row">
+    <h1>Destaques</h1>
+</div>
+
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 pointer" ng-repeat="item in dataSet" ng-click="getDetails(item.id)">
+        <div class="panel panel-warning panel-preview related">
+          <div class="panel-body">
+            <div class="image">
+                <img ng-src="{{item.foto}}">
+            </div>
+            <h2 class="panel-title">{{item.nome}}</h2>
+            <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(item.estrelas) track by $index"></span>
+            <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-item.estrelas) track by $index"></span>
+        </div>
+    </div>
+</div>
+</div>
+
+
 
