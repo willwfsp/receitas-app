@@ -1,0 +1,52 @@
+<h1>Cadastro de Receita</h1>
+<form class="form-horizontal" role="form" action="" name="formulario" onsubmit="return validateForm()">
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="text" ng-model="autor" required class="form-control"  id="autor" placeholder="Autor">
+    </div>
+  </div>
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="text" required class="form-control"  ng-model="receita" id="receita" placeholder="Nome da Receita">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input required class="form-control" id="descricao" ng-model="descricao" type="text" placeholder="Descrição">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="text" required class="form-control" ng-model="email" id="imagem" placeholder="Link da Imagem">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-3"> 
+      <input type="text" class="form-control" ng-model="categoria" id="categoria" name="categoria" placeholder="Categoria">
+    </div>
+    <div class="col-sm-3"> 
+      <input type="text" class="form-control" ng-model="tempo" id="tempo" name="tempo" placeholder="Tempo de Preparo">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="text" required class="form-control" ng-model="instrucao" id="instrucao" placeholder="Instruções de Preparo">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="text" required class="form-control" ng-model="porcao" id="porcao" placeholder="Porções">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <input type="text" required class="form-control" ng-model="metodo" id="metodo" placeholder="Método de cozimento">
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>
