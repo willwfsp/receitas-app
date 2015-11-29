@@ -2,7 +2,7 @@
 <form class="form-horizontal" role="form" action="" name="formulario" onsubmit="return validateForm()">
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
-      <input type="text" ng-model="autor" required class="form-control"  id="autor" placeholder="Autor">
+      <input type="text" ng-model="autor" class="form-control"  id="autor" placeholder="Autor">
     </div>
   </div>
    <div class="form-group">
@@ -31,7 +31,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
-      <input type="text" required class="form-control" ng-model="instrucao" id="instrucao" placeholder="Instruções de Preparo">
+      <textarea type="text"  rows="4" cols="50" required class="form-control" ng-model="instrucao" id="instrucao" placeholder="Instruções de Preparo"/>
     </div>
   </div>
   <div class="form-group">

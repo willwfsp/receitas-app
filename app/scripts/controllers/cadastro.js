@@ -22,6 +22,7 @@ angular.module('receitasApp')
     	string = angular.uppercase(string);
     	return string;
     }
+    
 
   });
 

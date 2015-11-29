@@ -8,10 +8,12 @@
  * Controller of the receitasApp
  */
 angular.module('receitasApp')
-  .controller('LoginCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('LoginCtrl', function ($scope, $location) {
+   $scope.login = '';
+   $scope.senha = '';
+
+   $scope.goHome = function ( id ) {
+        $location.path( '/home');
+    };
+
   });
