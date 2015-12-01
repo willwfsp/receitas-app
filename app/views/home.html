@@ -1,42 +1,16 @@
-<!--
 
 <div class="row">
     <h1>Destaques</h1>
 </div>
 
 
-<div ng-repeat="item in dataSet">
-    <div class="row pointer" ng-click="getCategory(item.category)">
-        <h2>{{item.category}}</h2>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 pointer" ng-repeat="recipe in item.recipes" ng-click="getDetails(recipe.id)">
-            <div class="panel panel-warning panel-preview related">
-              <div class="panel-body">
-                <div class="image">
-                    <img src="imagens/chocolate_quente.jpg">
-                </div>
-                <h2 class="panel-title">{{recipe.name}}</h2>
-                <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(recipe.rating) track by $index"></span>
-                <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-recipe.rating) track by $index"></span>
-              </div>
-            </div>
-        </div>
-    </div>
-</div>
--->
-<div class="row">
-    <h1>Destaques</h1>
-</div>
 
-
-
-<div class="row">
+<div class="row" >
     <div class="col-xs-12 col-sm-6 col-md-4 pointer" ng-repeat="item in dataSet" ng-click="getDetails(item.id)">
         <div class="panel panel-warning panel-preview related">
           <div class="panel-body">
             <div class="image">
-                <img ng-src="{{item.foto}}">
+                <img ng-src="{{item.foto}}" alt="{{item.nome}}" title="{{item.nome}}">
             </div>
             <h2 class="panel-title">{{item.nome}}</h2>
             <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(item.estrelas) track by $index"></span>

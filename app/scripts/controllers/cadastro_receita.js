@@ -13,11 +13,15 @@ angular.module('receitasApp')
     $scope.porcao = '';
     $scope.nutricional = '';
     $scope.ingredientes = [{ nome: "", quantidade: 0, unidade: ""}];
-    $scope.ingredientes.push( { nome:"", quantidade:0, unidade:"" } );
+    
   	$scope.change = function (string){
 		string = string.replace(/[\D]/g, '');
     	string = angular.uppercase(string);
     	return string;
+    }
+
+    $scope.adicionarIngr = function() {
+        $scope.ingredientes.push( { nome:"", quantidade:0, unidade:"" } );
     }
 });
 

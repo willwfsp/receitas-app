@@ -7,16 +7,17 @@
     <h1>{{categoryTitle}}</h1>
 </div>
 <div class="row">
-    <div class="col-xs-8 col-sm-6 col-md-4 pointer" ng-repeat="recipe in dataSet" ng-click="getDetails(recipe.id)">
-        <div class="panel panel-default panel-preview related">
+    <div class="col-xs-12 col-sm-6 col-md-4 pointer" ng-repeat="item in dataSet" ng-click="getDetails(item.id)">
+        <div class="panel panel-warning panel-preview related">
           <div class="panel-body">
             <div class="image">
-                <img src="http://placehold.it/220x220">
+                <img ng-src="{{item.foto}}" alt="{{item.nome}}" title="{{item.nome}}">
             </div>
-            <h2 class="panel-title">{{recipe.name}}</h2>
-            <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(recipe.rating) track by $index"></span>
-            <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-recipe.rating) track by $index"></span>
-          </div>
+            <h2 class="panel-title">{{item.nome}}</h2>
+            <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(item.estrelas) track by $index"></span>
+            <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-item.estrelas) track by $index"></span>
+            <div class="panel-title owner"><spam class="glyphicon glyphicon-user" style="padding-right: 10px;"></spam>{{item.owner}}</div>
         </div>
     </div>
+</div>
 </div>

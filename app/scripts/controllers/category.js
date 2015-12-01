@@ -8,7 +8,7 @@
  * Controller of the receitasApp
  */
 angular.module('receitasApp')
-.controller('CategoryCtrl', function ($routeParams, $scope, $location, Utils ) {
+.controller('CategoryCtrl', function ($routeParams, $http, $scope, $location, Utils ) {
     var category = $routeParams.id;
     
     $scope.utils = Utils;
@@ -29,53 +29,10 @@ angular.module('receitasApp')
         return new Array(5-num);   
     }
     
-    $scope.dataSet = 
-        [ 
-                    {
-                        id: 0,
-                        name: 'Receita 1',
-                        rating: 5
-                    },
-                    {
-                        id: 1,
-                        name: 'Receita 2',
-                        rating: 4
-                    },
-                    {
-                        id: 2,
-                        name: 'Receita 3',
-                        rating: 3
-                    },
-                     {
-                        id: 3,
-                        name: 'Receita 4',
-                        rating: 5
-                    },
-                    {
-                        id: 4,
-                        name: 'Receita 5',
-                        rating: 4
-                    },
-                    {
-                        id: 5,
-                        name: 'Receita 6',
-                        rating: 3
-                    },
-                     {
-                        id: 6,
-                        name: 'Receita 7',
-                        rating: 5
-                    },
-                    {
-                        id: 7,
-                        name: 'Receita 8',
-                        rating: 4
-                    },
-                    {
-                        id: 8,
-                        name: 'Receita 9',
-                        rating: 3
-                    },
-                ];
+    $http.get('http://127.0.0.1:8080/categorias/'+category).then(function successCallBack(response){
+        $scope.dataSet = response.data.receitas;
+    });
+
+    
 
 });

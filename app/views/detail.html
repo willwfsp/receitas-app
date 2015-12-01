@@ -1,44 +1,60 @@
 <ol class="breadcrumb">
   <li><a href="#/">Home</a></li>
-  <li><a href="#/category/salgados">Salgados</a></li>
-  <li class="active">{{dataSet.name}}</li>
+  <li><a href="#/category/salgados">{{dataSet.categoria}}</a></li>
+  <li class="active">{{dataSet.nome}}</li>
 </ol>
 
-<h1>{{dataSet.name}}</h1>
-
+<h1>{{dataSet.nome}}</h1>
+<h2>Descricao</h2>
+<div class="row">
+    <div class="col-md-8 descricao">
+        {{dataSet.descricao}}
+    </div>
+</div>
 <h2>Ingredientes</h2>
 <div class="row">
     <div class="col-md-8">
-        <div ng-repeat="item in dataSet.ingredients">
-            <h3>{{item.part}}</h3>
             <ul class="simple-list">
-                <li ng-repeat="ingredient in item.items">{{ingredient}}</li>
+                <li ng-repeat="item in dataSet.ingredientes">{{item.quantidade}} {{item.unidade}} {{item.nome}}</li>
             </ul>
-
-        </div>
-        <h2>Modo de preparo</h2>
-        <div ng-repeat="item in dataSet.preparation">
-            <h3>{{item.part}}</h3>
-            <ul class="simple-list">
-                <li ng-repeat="steps in item.items"><span class="step-index">{{$index+1}} - </span>{{steps}}</li>
-            </ul>
-
-        </div>
+        <h2>Modo de preparo ({{dataSet.metodo}})</h2>
+        <ul class="simple-list">
+            <li  ng-repeat="item in instrucoes"><span class="step-index">{{$index+1}} - </span>{{item}}</li>
+        </ul>
+        <div ng-include="commentsURL" ng-controller="CommentsCtrl"></div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-warning panel-preview related">
             <div class="panel-heading">
                 <h3 class="panel-title">Informações</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body"><br>
+                <span class="glyphicon glyphicon-ok info-icon"></span>
+                <span class="info-label" style="margin-top:-20px;">Avaliação:</span>
+                <div class="avaliacao">
+                    
+                    <span class="glyphicon glyphicon-star" style="font-size:1.5em;" ng-repeat="star in utils.getArray(dataSet.estrelas) track by $index"></span>
+                    <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-dataSet.estrelas) track by $index"></span>
+                </div>
                 <p>
-                    <span class="info-label">Avaliação:</span>
-                    <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(dataSet.rating) track by $index"></span>
-                    <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-dataSet.rating) track by $index"></span>
+                    <span class="glyphicon glyphicon-ice-lolly-tasted info-icon"></span>
+                    <span class="info-label">Rende:</span> 
+                    {{dataSet.rendimento}} porções
                 </p>
-                <p><span class="info-label">Rende:</span> {{dataSet.portion}} porções</p>
-                <p><span class="info-label">Tempo de preparo:</span> {{dataSet.time}}</p>
-                <p><span class="info-label">Autor:</span> {{dataSet.author}}</p>
+                <p>
+                    <span class="glyphicon glyphicon-heart-empty info-icon"></span>
+                    <span class="info-label">Valor Nutricional:</span> 
+                    {{dataSet.valor_nutricional}} calorias</p>
+                <p>
+                    <span class="glyphicon glyphicon-time info-icon"></span>
+                    <span class="info-label"> Tempo de preparo:</span> 
+                    {{dataSet.tempo}} min
+                </p>
+                <p>
+                    <span class="glyphicon glyphicon-user info-icon"></span>
+                    <span class="info-label">Autor:</span> 
+                    {{dataSet.owner}}
+                </p>
             </div>
         </div>
         <div class="panel panel-warning panel-preview related">
@@ -66,6 +82,6 @@
         </div>
     </div>
 </div>
-<div ng-include="commentsURL" ng-controller="CommentsCtrl"></div>
+
 
 

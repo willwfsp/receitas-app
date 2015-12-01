@@ -1,4 +1,6 @@
 <h1>Cadastro de Receita</h1>
+<h2>Informações</h2>
+<hr>
 <form class="form-horizontal" role="form" action="" name="formulario" onsubmit="">
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
@@ -7,7 +9,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-6">
-      <input type="text" required class="form-control"  maxlength="50" ng-model="receita" id="receita" placeholder="Nome da Receita">
+      <input type="text" class="form-control"  maxlength="50" ng-model="receita" id="receita" placeholder="Nome da Receita">
     </div>
   </div>
   
@@ -30,35 +32,12 @@
       <input type="text" class="form-control" ng-model="tempo" ng-change="tempo=change(tempo)" id="tempo" name="tempo" placeholder="Tempo de Preparo">
     </div>
   </div>
-
-  
-  <div ng-repeat="ingrediente in ingredientes">
-
-    <div class="form-group">
-
-        <div class="col-sm-offset-2 col-sm-3">
-          <input type="text" required class="form-control" ng-model="item.nome_ingrediente" id="nome_ingrediente" placeholder="Nome do Ingrediente"/>
-        </div>
-        <div class="col-sm-1">
-          <input type="text" required class="form-control" ng-model="item.quantidade" id="quantidade_ingrediente" placeholder="Quantidade"/>
-        </div>
-
-      <div class="col-sm-2">
-        <input type="text" required class="form-control" ng-model="item.unidade" id="unidade" placeholder="Unidade"/>
-      </div>
-
-  </div>
-</div>
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-6">
-    <textarea type="text"  rows="4" cols="50" required class="form-control" ng-model="instrucao" id="instrucao" placeholder="Instruções de Preparo"/>
+    <input type="text" required class="form-control" ng-model="porcao" ng-change="porcao=change(porcao)" id="porcao" placeholder="Rendimento">
   </div>
 </div>
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-6">
-    <input type="text" required class="form-control" ng-model="porcao" ng-change="porcao=change(porcao)" id="porcao" placeholder="Porções">
-  </div>
-</div>
+
 <div class="form-group">
   <div class="col-sm-offset-2 col-sm-6">
     <input type="text" required class="form-control" ng-model="nutricional" ng-change="nutricional=change(nutricional)" id="nutricional" placeholder="Valor Nutricional">
@@ -69,9 +48,46 @@
     <input type="text" required class="form-control" ng-model="metodo"  id="metodo" placeholder="Método de cozimento">
   </div>
 </div>
+</form>
+<h2>Receita</h2>
+<hr>
+<h3>Ingredientes</h3>
+<form class="form-horizontal">
+<div ng-repeat="ingrediente in ingredientes">
+
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-3">
+          <input type="text" class="form-control" ng-model="item.nome_ingrediente" id="nome_ingrediente" placeholder="Nome do Ingrediente"/>
+        </div>
+        <div class="col-sm-1">
+          <input type="text" class="form-control" ng-model="item.quantidade" id="quantidade_ingrediente" placeholder="Quantidade"/>
+        </div>
+
+      <div class="col-sm-2">
+        <input type="text" class="form-control" ng-model="item.unidade" id="unidade" placeholder="Unidade"/>
+      </div>
+
+  </div>
+</div>
+
 <div class="form-group"> 
   <div class="col-sm-offset-2 col-sm-8">
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button class="btn btn-primary btn-lg" ng-click="adicionarIngr()"><span class="glyphicon glyphicon-plus"></span>Adicionar ingrediente</button>
+  </div>
+</div>
+
+<h3>Ingredientes</h3>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-6">
+    <textarea type="text"  rows="4" cols="50" class="form-control" ng-model="instrucao" id="instrucao" placeholder="Instruções de Preparo"/>
+  </div>
+</div>
+
+
+<div class="form-group"> 
+  <div class="col-sm-offset-2 col-sm-8">
+    <button type="submit" class="btn btn-success btn-lg">Publicar</button>
   </div>
 </div>
 </form>

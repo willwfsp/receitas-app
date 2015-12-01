@@ -141,6 +141,21 @@ div.related {
     color: #C25C5C;
 }
 
+.info-icon {
+  font-style: bold;
+  color: #C25C5C;
+}
+
+.avaliacao {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.descricao {
+  font-size: 18px;
+}
+
 .panel-preview {
     
 }
