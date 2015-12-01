@@ -57,7 +57,7 @@
 
     <div class="form-group">
 
-        <div class="col-sm-offset-2 col-sm-3">
+        <div class="col-sm-offset-2 col-sm-2">
           <input type="text" class="form-control" ng-model="item.nome_ingrediente" id="nome_ingrediente" placeholder="Nome do Ingrediente"/>
         </div>
         <div class="col-sm-1">
@@ -68,12 +68,16 @@
         <input type="text" class="form-control" ng-model="item.unidade" id="unidade" placeholder="Unidade"/>
       </div>
 
+       <div class="col-sm-1">
+        <button class="btn btn-danger" ng-click="removeIngr($index)"><span class="glyphicon glyphicon-minus"></span></button>
+      </div>
+
   </div>
 </div>
 
 <div class="form-group"> 
-  <div class="col-sm-offset-2 col-sm-8">
-    <button class="btn btn-primary btn-lg" ng-click="adicionarIngr()"><span class="glyphicon glyphicon-plus"></span>Adicionar ingrediente</button>
+  <div class="col-sm-offset-7 col-sm-1">
+    <button class="btn btn-primary" ng-click="adicionarIngr()"><span class="glyphicon glyphicon-plus"></span> </button>
   </div>
 </div>
 
