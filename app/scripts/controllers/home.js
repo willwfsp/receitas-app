@@ -24,8 +24,8 @@ angular.module('receitasApp')
     $scope.utils = Utils;
     // dataset provisório para popular a view
 
-    $http.get('http://2d767ff4.ngrok.io/api/receitas/').then(function successCallBack(response){
-        $scope.dataSet = response.data.results;
+    $http.get('http://127.0.0.1:8080/receitas/').then(function successCallBack(response){
+        $scope.dataSet = response.data;
     });
 
   });

@@ -41,10 +41,9 @@
             <h2 class="panel-title">{{item.nome}}</h2>
             <span class="glyphicon glyphicon-star" ng-repeat="star in utils.getArray(item.estrelas) track by $index"></span>
             <span class="glyphicon glyphicon-star-empty" ng-repeat="star in utils.getArray(5-item.estrelas) track by $index"></span>
+            <div class="panel-title owner"><spam class="glyphicon glyphicon-user" style="padding-right: 10px;"></spam>{{item.owner}}</div>
         </div>
     </div>
 </div>
 </div>
-
-
 

@@ -136,6 +136,11 @@ div.related {
     padding-bottom: 5px;
 }
 
+.owner {
+    font-style: italic;
+    color: #C25C5C;
+}
+
 .panel-preview {
     
 }
